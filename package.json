@@ -4,7 +4,7 @@
   "description": "A jQuery plugin for a slider with adaptive colored figcaption and navigation.",
   "author": "Kenny Vaneetvelde",
   "homepage": "http://creative-punch.net",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.7",

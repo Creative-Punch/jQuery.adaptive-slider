@@ -39,6 +39,6 @@
     ],
     "dependencies": {
         "jquery": ">=1.10.2",
-        "rgbaster": "~1.0.0"
+        "rgbaster": ">=1.0.0"
     }
 }
