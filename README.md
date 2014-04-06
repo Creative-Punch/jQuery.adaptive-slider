@@ -7,6 +7,14 @@ A jQuery plugin for a slider with adaptive colored figcaption and navigation.
 
 **Author**: <a target="_blank" href="http://creative-punch.net">Creative Punch</a>
 
+Installation
+------------
+You can get this plugin either through the repository, or with **Bower**
+
+```
+bower install adaptiveslider
+```
+
 Usage
 -------
 First, be sure to add rgbaster.js and jQuery to your project.
