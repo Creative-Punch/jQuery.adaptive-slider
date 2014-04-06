@@ -4,8 +4,9 @@
 (function($) {
 	'use strict';
 
+	var itemSelector = '.slider-item';
+
 	var DEFAULTS = {
-		itemSelector: '.slider-item',
 		opacity: 1,
 		normalizeTextColor: false,
 		normalizedTextColors: {
@@ -20,7 +21,7 @@
 
 		var isActive = false;
 		$slider.find('li').each(function() {
-			$(this).addClass(opts.itemSelector.replace('.',''));
+			$(this).addClass(itemSelector.replace('.',''));
 
 			if(!isActive) {
 				$(this).addClass('active');
@@ -40,13 +41,13 @@
 		var firstImage = true; // For the slider navigation coloring
 
 		// Initialize the image variables.
-		images = $slider.find(opts.itemSelector);
+		images = $slider.find(itemSelector);
 		currentImage = images.first();
-		nextImage = currentImage.next(opts.itemSelector);
+		nextImage = currentImage.next(itemSelector);
 		// The previous image of the first image is the last image.
 		prevImage = images.last();
 
-		$slider.find(opts.itemSelector + ' figure img').each(function() {
+		$slider.find(itemSelector + ' figure img').each(function() {
 			var $this = $(this);
 
 			var handleColors = function() {
@@ -79,27 +80,20 @@
 				var $colorme = $this.siblings('figcaption');
 				
 				if($colorme.length) {
-					var color = data.color;
-					if(opts.opacity) {
-						if (opts.opacity) {
-							color = rgbToRgba(color, opts.opacity);
-						}
+					var bgcolor = data.color;
 
-						$colorme.css({
-							backgroundColor: color
-						});
+					if (opts.opacity) {
+						bgcolor = rgbToRgba(bgcolor, opts.opacity);
 					}
 
-					// Normalize the text color based on luminance.
-					if (opts.normalizeTextColor) {
-						$colorme.css({
-							color: getNormalizedTextColor(data.color)
-						});
-					}
+					$colorme.css({
+						backgroundColor: bgcolor,
+						color: getNormalizedTextColor(data.color)
+					});
 
-					if($('.slider-item.active figure figcaption').attr('style').length && firstImage) {
+					if($('.slider-item.active figure figcaption').attr('style') && firstImage) {
 						$('.slider-nav').css({
-							backgroundColor : color,
+							backgroundColor : bgcolor,
 							color : getNormalizedTextColor(data.color)
 						});
 
@@ -119,7 +113,7 @@
 
 			prevImage = currentImage;
 			currentImage = nextImage;
-			nextImage = nextImage.next(opts.itemSelector);
+			nextImage = nextImage.next(itemSelector);
 
 			if (!nextImage.length) {
 				nextImage = images.first();
@@ -143,7 +137,7 @@
 
 			nextImage = currentImage;
 			currentImage = prevImage;
-			prevImage = prevImage.prev(opts.itemSelector);
+			prevImage = prevImage.prev(itemSelector);
 
 			if (!prevImage.length) {
 				prevImage = images.last();
