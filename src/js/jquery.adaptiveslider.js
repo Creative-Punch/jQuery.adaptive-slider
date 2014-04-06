@@ -97,7 +97,7 @@
 						});
 					}
 
-					if(firstImage) {
+					if($('.slider-item.active figure figcaption').attr('style').length && firstImage) {
 						$('.slider-nav').css({
 							backgroundColor : color,
 							color : getNormalizedTextColor(data.color)
@@ -137,9 +137,6 @@
 
 		$slider.on('click', '.slider-nav.prev' , function(e) {
 			e.preventDefault();
-
-			console.log(prevImage);
-			console.log(currentImage);
 
 			prevImage.toggleClass('active', true);
 			currentImage.toggleClass('active', false);

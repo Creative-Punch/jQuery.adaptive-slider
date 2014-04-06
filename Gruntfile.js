@@ -51,23 +51,25 @@ module.exports = function(grunt) {
 
 		// Compile SCSS
 		compass: {
-	    dist: {
-	      options: {
-	      	sassDir: 'src/styles/sass',
-	      	cssDir: 'src/styles/css',
-	      	environment: 'development',
-	      	specify: 'src/styles/sass/adaptiveslider.scss',
-	      	banner: '<%= meta.banner %>'
-	      }
-	    }
-	  },
+			dist: {
+				options: {
+					sassDir: 'src/styles/sass',
+					cssDir: 'src/styles/css',
+					environment: 'development',
+					specify: 'src/styles/sass/adaptiveslider.scss',
+					banner: '<%= meta.banner %>'
+				}
+			}
+		},
 
 	  // Copy the output CSS
 	  copy: {
 	  	dist: {
-	  		expand: false, 
-	  		src: ['src/styles/css/adaptiveslider.css'], 
-	  		dest: 'dist/styles/adaptiveslider.css'
+	  		files: [
+		  		{ expand: false, src: ['src/styles/css/adaptiveslider.css'], dest: 'dist/styles/adaptiveslider.css' },
+		  		{ expand: true, cwd:'src/bower_components', src: ['**'], dest: 'dist/vendor/' },
+	  		]
+	  		
 	  	}
 	  },
 
@@ -83,7 +85,7 @@ module.exports = function(grunt) {
 	  	}
 	  }
 
-		});
+	});
 
 grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-jshint');

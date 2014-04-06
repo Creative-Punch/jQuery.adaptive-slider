@@ -1,10 +1,10 @@
 {
-  "name": "jquery-boilerplate",
-  "title": "jQuery Boilerplate",
-  "description": "A jump-start for jQuery plugins development.",
-  "author": "Zeno Rocha",
-  "homepage": "https://github.com/jquery-boilerplate/boilerplate/",
-  "version": "3.3.1",
+  "name": "Adaptive Slider",
+  "title": "Adaptive jQuery Slider Plugin",
+  "description": "A jQuery plugin for a slider with adaptive colored figcaption and navigation.",
+  "author": "Kenny Vaneetvelde",
+  "homepage": "http://creative-punch.net",
+  "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.7",

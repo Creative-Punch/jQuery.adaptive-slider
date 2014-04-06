@@ -1,0 +1,44 @@
+{
+    "name": "adaptiveslider",
+    "version": "1.0.1",
+    "keywords": [
+		"jquery",
+		"adaptive",
+		"slider",
+		"slideshow",
+		"plugin"
+	],
+    "main": [
+    	"dist/js/jquery.adaptiveslider.js",
+    	"dist/styles/adaptiveslider.css"
+    ],
+    "authors": [
+    	"Kenny Vaneetvelde <kenny@creative-punch.net> (http://creative-punch.net)"
+    ],
+    "repository": {
+    	"type": "git",
+    	"url": "https://github.com/Creative-Punch/jquery-adaptive-slider.git"
+    },
+    "license": "MIT",
+    "ignore": [
+        "src",
+        "demo",
+        "node_modules",
+        "dist/vendor",
+        ".bowerrc",
+        ".gitignore",
+        "adaptiveslidder.jquery.json",
+        ".jshintrc",
+        "bower.json",
+        "Gruntfile.js",
+        "package.json",
+        "README.md",
+        "HISTORY.md",
+        "CONTRIBUTING.md",
+        "LICENSE"
+    ],
+    "dependencies": {
+        "jquery": ">=1.10.2",
+        "rgbaster": "~1.0.0"
+    }
+}

@@ -7,8 +7,7 @@
  *  Under MIT License
  */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-/* line 15, ../sass/adaptiveslider.scss */
+/* line 9, ../sass/adaptiveslider.scss */
 ul.adaptive-slider {
   margin: 0 auto;
   padding: 0;
@@ -16,13 +15,13 @@ ul.adaptive-slider {
   height: 400px;
   position: relative;
 }
-/* line 22, ../sass/adaptiveslider.scss */
+/* line 16, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 28, ../sass/adaptiveslider.scss */
+/* line 22, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-nav {
   cursor: pointer;
   position: absolute;
@@ -45,19 +44,19 @@ ul.adaptive-slider li.slider-nav {
   -o-transition: opacity 0.3s, background-color 0.3s, color 0.3s;
   transition: opacity 0.3s, background-color 0.3s, color 0.3s;
 }
-/* line 45, ../sass/adaptiveslider.scss */
+/* line 39, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-nav:hover {
   opacity: 1;
 }
-/* line 49, ../sass/adaptiveslider.scss */
+/* line 43, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-nav.next {
   right: 0;
 }
-/* line 53, ../sass/adaptiveslider.scss */
+/* line 47, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-nav.prev {
   left: 0;
 }
-/* line 59, ../sass/adaptiveslider.scss */
+/* line 53, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item {
   position: absolute;
   top: 0;
@@ -68,20 +67,20 @@ ul.adaptive-slider li.slider-item {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 66, ../sass/adaptiveslider.scss */
+/* line 60, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item.active {
   opacity: 1;
 }
-/* line 70, ../sass/adaptiveslider.scss */
+/* line 64, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item figure {
   margin: 0;
   position: relative;
 }
-/* line 74, ../sass/adaptiveslider.scss */
+/* line 68, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item figure img {
   display: block;
 }
-/* line 78, ../sass/adaptiveslider.scss */
+/* line 72, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item figure figcaption {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -99,12 +98,12 @@ ul.adaptive-slider li.slider-item figure figcaption {
   -o-transition: max-height 1s 0.2s;
   transition: max-height 1s 0.2s;
 }
-/* line 91, ../sass/adaptiveslider.scss */
+/* line 85, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item figure figcaption h1 {
   line-height: 3em;
   margin: 0;
 }
-/* line 96, ../sass/adaptiveslider.scss */
+/* line 90, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item figure figcaption p {
   margin: 0;
   padding: 0 20px 20px 20px;
@@ -112,7 +111,7 @@ ul.adaptive-slider li.slider-item figure figcaption p {
   overflow: hidden;
   text-align: justify;
 }
-/* line 104, ../sass/adaptiveslider.scss */
+/* line 98, ../sass/adaptiveslider.scss */
 ul.adaptive-slider li.slider-item figure figcaption:hover {
   max-height: 100%;
 }

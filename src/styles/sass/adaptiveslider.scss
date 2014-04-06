@@ -1,16 +1,10 @@
-// Google fonts: Open sans
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
 // Compass mixins
 @import "compass/css3/transition";
-@import "compass/css3/box-sizing";
 @import "compass/css3/user-interface";
 
 $sliderheight: 400px;
 $captionheight: 3em;
 $navwidth: 60px;
-
-$background: #30303A;
 
 ul.adaptive-slider {
   margin: 0 auto;
