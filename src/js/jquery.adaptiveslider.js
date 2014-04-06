@@ -8,7 +8,6 @@
 
 	var DEFAULTS = {
 		opacity: 1,
-		normalizeTextColor: false,
 		normalizedTextColors: {
 			light: '#fff',
 			dark: '#000'
