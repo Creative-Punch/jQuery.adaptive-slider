@@ -1,0 +1,39 @@
+{
+	"name": "Adaptive Slider",
+	"title": "Adaptive jQuery Slider Plugin",
+	"description": "A jQuery plugin for a slider with adaptive colored figcaption and navigation.",
+	"keywords": [
+		"jquery",
+		"adaptive",
+		"slider",
+		"slideshow",
+		"plugin"
+	],
+	"version": "1.0.0",
+	"author": {
+		"name": "Kenny Vaneetvelde",
+		"email": "kenny@creative-punch.net",
+		"url": "http://creative-punch.net"
+	},
+	"maintainers": [
+		{
+			"name": "Kenny Vaneetvelde",
+			"email": "kenny@creative-punch.net",
+			"url": "http://creative-punch.net"
+		}
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://creativepunch.mit-license.org/"
+		}
+	],
+	"bugs": "https://github.com/Creative-Punch/jquery-adaptive-slider/issues",
+	"homepage": "http://creative-punch.net",
+	"docs": "https://github.com/Creative-Punch/jquery-adaptive-slider#readme",
+	"download": "https://github.com/Creative-Punch/jquery-adaptive-slider/archive/master.zip",
+	"dependencies": {
+		"jquery": ">=1.10",
+		"rgbaster": ">=0.1"
+	}
+}

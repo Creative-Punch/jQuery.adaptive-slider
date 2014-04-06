@@ -1,0 +1,10 @@
+/*
+ *  Adaptive jQuery Slider Plugin - v1.0.0
+ *  A jQuery plugin for a slider with adaptive colored figcaption and navigation.
+ *  http://creative-punch.net
+ *
+ *  Made by Kenny Vaneetvelde
+ *  Under MIT License
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);ul.adaptive-slider{margin:0 auto;padding:0;width:980px;height:400px;position:relative}ul.adaptive-slider li{margin:0;padding:0;list-style:none}ul.adaptive-slider li.slider-nav{cursor:pointer;position:absolute;z-index:2;text-align:center;color:#fff;text-decoration:none;font-size:3em;display:block;line-height:400px;height:400px;width:60px;background-color:rgba(0,0,0,.5);opacity:.7;-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-transition:opacity .3s,background-color .3s,color .3s;-moz-transition:opacity .3s,background-color .3s,color .3s;-o-transition:opacity .3s,background-color .3s,color .3s;transition:opacity .3s,background-color .3s,color .3s}ul.adaptive-slider li.slider-nav:hover{opacity:1}ul.adaptive-slider li.slider-nav.next{right:0}ul.adaptive-slider li.slider-nav.prev{left:0}ul.adaptive-slider li.slider-item{position:absolute;top:0;left:0;opacity:0;-webkit-transition:opacity .5s;-moz-transition:opacity .5s;-o-transition:opacity .5s;transition:opacity .5s}ul.adaptive-slider li.slider-item.active{opacity:1}ul.adaptive-slider li.slider-item figure{margin:0;position:relative}ul.adaptive-slider li.slider-item figure img{display:block}ul.adaptive-slider li.slider-item figure figcaption{background-color:rgba(0,0,0,.5);color:#fff;width:calc(100% - 120px);text-align:center;position:absolute;bottom:0;left:60px;z-index:1;max-height:6em;overflow:hidden;-webkit-transition:max-height 1s;-webkit-transition-delay:.2s;-moz-transition:max-height 1s .2s;-o-transition:max-height 1s .2s;transition:max-height 1s .2s}ul.adaptive-slider li.slider-item figure figcaption h1{line-height:3em;margin:0}ul.adaptive-slider li.slider-item figure figcaption p{margin:0;padding:0 20px 20px;display:block;overflow:hidden;text-align:justify}ul.adaptive-slider li.slider-item figure figcaption:hover{max-height:100%}

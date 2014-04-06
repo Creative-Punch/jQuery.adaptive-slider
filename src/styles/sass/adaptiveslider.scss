@@ -1,0 +1,111 @@
+// Google fonts: Open sans
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+// Compass mixins
+@import "compass/css3/transition";
+@import "compass/css3/box-sizing";
+@import "compass/css3/user-interface";
+
+$sliderheight: 400px;
+$captionheight: 3em;
+$navwidth: 60px;
+
+$background: #30303A;
+
+ul.adaptive-slider {
+  margin: 0 auto;
+  padding: 0;
+  width: 980px;
+  height: $sliderheight;
+  position: relative;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+
+    &.slider-nav {
+      cursor: pointer;
+      position: absolute;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 3em;
+      display: block;
+      line-height: $sliderheight;
+      height: $sliderheight;
+      width: $navwidth;
+      background-color: rgba(0,0,0,0.5);
+      opacity: 0.7;
+      @include user-select(none);
+      @include transition(opacity 0.3s, background-color 0.3s, color 0.3s);
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.next {
+        right: 0;
+      }
+
+      &.prev {
+        left: 0;
+      }
+    }
+
+
+    &.slider-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      @include transition(opacity 0.5s);
+
+      &.active {
+        opacity: 1;
+      }
+
+      figure {
+        margin: 0;
+        position: relative;
+
+        img {
+          display: block;
+        }
+
+        figcaption {
+          background-color: rgba(0,0,0,0.5);
+          color: white;
+          width: calc(100% - #{$navwidth*2});
+          text-align: center;
+          position: absolute;
+          bottom: 0;
+          left: $navwidth;
+          z-index: 1;
+          max-height: #{$captionheight * 2};
+          overflow: hidden;
+          @include transition(max-height 1s 0.2s);
+
+          h1 {
+            line-height: $captionheight;
+            margin: 0;
+          }
+
+          p {
+            margin: 0;
+            padding: 0 20px 20px 20px;
+            display: block;
+            overflow: hidden;
+            text-align: justify;
+          }
+
+          &:hover {
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

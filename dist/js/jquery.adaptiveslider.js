@@ -1,0 +1,175 @@
+/*
+ *  Adaptive jQuery Slider Plugin - v1.0.0
+ *  A jQuery plugin for a slider with adaptive colored figcaption and navigation.
+ *  http://creative-punch.net
+ *
+ *  Made by Kenny Vaneetvelde
+ *  Under MIT License
+ */
+/* jshint debug: true, expr: true */
+/* global RGBaster:false */
+
+(function($) {
+	'use strict';
+
+	var DEFAULTS = {
+		itemSelector: '.slider-item',
+		opacity: 1,
+		normalizeTextColor: false,
+		normalizedTextColors: {
+			light: '#fff',
+			dark: '#000'
+		},
+	};
+
+	$.fn.adaptiveSlider = function(options) {
+		var $slider = $(this);
+		var opts = $.extend({}, DEFAULTS, options);
+
+		var isActive = false;
+		$slider.find('li').each(function() {
+			$(this).addClass(opts.itemSelector.replace('.',''));
+
+			if(!isActive) {
+				$(this).addClass('active');
+				isActive = true;
+			}
+		});
+
+		$slider.prepend('<li unselectable class="slider-nav next">&gt;</li>');
+		$slider.prepend('<li unselectable class="slider-nav prev">&lt;</li>');
+
+		// Image info
+		var images;
+		var currentImage;
+		var nextImage;
+		var prevImage;
+
+		var firstImage = true; // For the slider navigation coloring
+
+		// Initialize the image variables.
+		images = $slider.find(opts.itemSelector);
+		currentImage = images.first();
+		nextImage = currentImage.next(opts.itemSelector);
+		// The previous image of the first image is the last image.
+		prevImage = images.last();
+
+		$slider.find(opts.itemSelector + ' figure img').each(function() {
+			var $this = $(this);
+
+			var handleColors = function() {
+				var img = $this[0];
+				
+				RGBaster.colors(img, function(colors) {
+					$this.trigger('color-found', {
+						color: colors.dominant,
+					});
+				}, 20);
+			};
+
+			// Helper function to calculate yiq - http://en.wikipedia.org/wiki/YIQ
+			var getYIQ = function(color) {
+				var rgb = color.match(/\d+/g);
+				return ((rgb[0] * 299) + (rgb[1] * 587) + (rgb[2] * 114)) / 1000;
+			};
+
+			var getNormalizedTextColor = function(color) {
+				return getYIQ(color) >= 128 ? opts.normalizedTextColors.dark : opts.normalizedTextColors.light;
+			};
+
+			var rgbToRgba = function(rgb, alpha) {
+				rgb = rgb.replace(')', ',' + alpha + ')');
+				rgb = rgb.replace('rgb', 'rgba');
+				return rgb ? rgb : null;
+			};
+
+			$this.on('color-found', function(event, data) {
+				var $colorme = $this.siblings('figcaption');
+				
+				if($colorme.length) {
+					var color = data.color;
+					if(opts.opacity) {
+						if (opts.opacity) {
+							color = rgbToRgba(color, opts.opacity);
+						}
+
+						$colorme.css({
+							backgroundColor: color
+						});
+					}
+
+					// Normalize the text color based on luminance.
+					if (opts.normalizeTextColor) {
+						$colorme.css({
+							color: getNormalizedTextColor(data.color)
+						});
+					}
+
+					if(firstImage) {
+						$('.slider-nav').css({
+							backgroundColor : color,
+							color : getNormalizedTextColor(data.color)
+						});
+
+						firstImage = false;
+					}
+				}
+			});
+
+			handleColors();
+		});
+
+		$slider.on('click', '.slider-nav.next', function(e) {
+			e.preventDefault();
+
+			nextImage.toggleClass('active', true);
+			currentImage.toggleClass('active', false);
+
+			prevImage = currentImage;
+			currentImage = nextImage;
+			nextImage = nextImage.next(opts.itemSelector);
+
+			if (!nextImage.length) {
+				nextImage = images.first();
+			}
+
+			var figcaption = currentImage.find('figcaption');
+			var activeBgColor = figcaption.css('background-color');
+			var activeColor = figcaption.css('color');
+			$('.slider-nav').css({
+				backgroundColor : activeBgColor,
+				color : activeColor
+			});
+
+		});
+
+		$slider.on('click', '.slider-nav.prev' , function(e) {
+			e.preventDefault();
+
+			console.log(prevImage);
+			console.log(currentImage);
+
+			prevImage.toggleClass('active', true);
+			currentImage.toggleClass('active', false);
+
+			nextImage = currentImage;
+			currentImage = prevImage;
+			prevImage = prevImage.prev(opts.itemSelector);
+
+			if (!prevImage.length) {
+				prevImage = images.last();
+			}
+
+			var figcaption = currentImage.find('figcaption');
+			var activeBgColor = figcaption.css('background-color');
+			var activeColor = figcaption.css('color');
+			$('.slider-nav').css({
+				backgroundColor : activeBgColor,
+				color : activeColor
+			});
+
+		});
+
+	};
+
+})(jQuery);
