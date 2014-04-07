@@ -3,6 +3,8 @@ Adaptive Slider jQuery Plugin
 
 A jQuery plugin for a slider with adaptive colored figcaption and navigation.
 
+This plugin will take a list of *figure* elements containing an image and a *figcaption* element and automagically insert navigation and color the *figcaption* background color and the navigation according to the main color found in the current image in the slider/carousel.
+
 #<a target="_blank" href="http://demos.creative-punch.net/adaptiveslider/?utm_source=GitHub?utm_source=GitHub&utm_medium=GitHub&utm_campaign=AdaptiveSlider">Demo</a>
 
 **Author**: <a target="_blank" href="http://creative-punch.net">Creative Punch</a>
@@ -61,6 +63,15 @@ Options
 **opacity**: This will allow you to set the opacity of the figcaption. This defaults to 1 (full opacity)
 
 **normalizedTextColors**: An array. This allows you to configure what color the light text (on a dark background) should have, and vice versa.
+
+Contributing
+-------------
+Feel free to contribute by forking this project and sending me a pull request!
+
+Todos
+--------
+* Make it responsive!
+* Add options for more slider animations other than fade
 
 License
 --------
