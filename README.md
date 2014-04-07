@@ -3,7 +3,7 @@ Adaptive Slider jQuery Plugin
 
 A jQuery plugin for a slider with adaptive colored figcaption and navigation.
 
-#<a href="http://demos.creative-punch.net/adaptiveslider/">Demo</a>
+#<a target="_blank" href="http://demos.creative-punch.net/adaptiveslider/?utm_source=GitHub?utm_source=GitHub&utm_medium=GitHub&utm_campaign=AdaptiveSlider">Demo</a>
 
 **Author**: <a target="_blank" href="http://creative-punch.net">Creative Punch</a>
 
